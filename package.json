@@ -3,11 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "lint": "vue-cli-service lint",
-    "mock": "nodemon ./mock/index.js",
-    "build": "rollup -c scripts/rollup.config.js",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "element-ui": "2.15",

@@ -1,7 +1,6 @@
 <template>
-<div style="width:50px">
-  <div v-ellipsis >111111111111111111111111111111111111111111111</div>
-  <!-- <aaA/> -->
+<div>
+
 </div>
 </template>
 <script>

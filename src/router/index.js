@@ -6,11 +6,11 @@ const routes = [
     redirect: '/test',
   },
   {
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/test'),
+    path: '/img-position',
+    name: 'img-position',
+    component: () => import('@/page/css-demo/img-position.vue'),
     meta: {
-      title: 'test',
+      title: 'img-position',
       isMenu: true
     },
   }
