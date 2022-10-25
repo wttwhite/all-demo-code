@@ -1,9 +1,19 @@
 <template>
-  <div class="img-container">
-    <div class="img-box">
-      <div class="img-item" v-for="n in 9" :index="n"></div>
+    <div class="img-container">
+      <div>
+        background-size: 300px 300px;
+      </div>
+      <div class="mt">
+        background-position: 0 -200px;
+      </div>
+      <div class="mt">
+        /*1-3*/
+        .img-item:nth-child(-1n+3)
+      </div>
+      <div class="img-box mt" >
+        <div class="img-item" v-for="n in 9" :index="n"></div>
+      </div>
     </div>
-  </div>
 </template>
 <script>
   export default {
@@ -18,6 +28,7 @@
   justify-content: center;
   align-items: center;
   background-color: antiquewhite;
+  flex-direction: column;
 }
 .img-box {
   width: 322px;

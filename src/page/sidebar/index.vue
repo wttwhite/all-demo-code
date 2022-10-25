@@ -8,11 +8,13 @@
       <el-submenu index="1">
         <template slot="title">样式效果</template>
         <el-menu-item index="1-1" @click.native="menuClick('/img-position')">九宫格图片</el-menu-item>
+        <el-menu-item index="1-2" @click.native="menuClick('/btn-animation1')">按钮边框旋转</el-menu-item>
       </el-submenu>
-    <el-menu-item index="2" disabled>
-<!--      <i class="el-icon-document"></i>-->
-      <span slot="title">js奇奇怪怪功能集合</span>
-    </el-menu-item>
+    <el-submenu index="2">
+      <!--      <i class="el-icon-document"></i>-->
+      <template slot="title">js奇奇怪怪功能集合</template>
+      <el-menu-item index="2-1" @click.native="menuClick('/interview-demo')">js-demo</el-menu-item>
+    </el-submenu>
   </el-menu>
 </template>
 <script>
