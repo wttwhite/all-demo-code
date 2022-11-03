@@ -3,6 +3,9 @@
     <div class="btn-box">
       按钮
     </div>
+    <div class="btn-box circle-box" >
+      loading
+    </div>
   </div>
 </template>
 <script>
@@ -57,5 +60,13 @@
   background-color: #fff;
   z-index: -1;
   border-radius: 8px;
+}
+
+.circle-box {
+  height: 100px;
+  border-radius: 50px;
+}
+.circle-box::after{
+  border-radius: 48px;
 }
 </style>

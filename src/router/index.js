@@ -24,6 +24,15 @@ const routes = [
     },
   },
   {
+    path: '/text-style1',
+    name: 'text-style1',
+    component: () => import('@/page/css-demo/text-style1.vue'),
+    meta: {
+      title: 'text-style1',
+      isMenu: true
+    },
+  },
+  {
     path: '/interview-demo',
     name: 'interview-demo',
     component: () => import('@/page/js-demo/interview-demo.vue'),

@@ -7,8 +7,8 @@
       active-text-color="#ffd04b">
       <el-submenu index="1">
         <template slot="title">样式效果</template>
-        <el-menu-item index="1-1" @click.native="menuClick('/img-position')">九宫格图片</el-menu-item>
-        <el-menu-item index="1-2" @click.native="menuClick('/btn-animation1')">按钮边框旋转</el-menu-item>
+        <el-menu-item v-for="(item ,index) in cssDemoMenu" :index="`1-${index + 1}`" @click.native="menuClick(item.path)">
+          {{ item.label }}</el-menu-item>
       </el-submenu>
     <el-submenu index="2">
       <!--      <i class="el-icon-document"></i>-->
@@ -20,6 +20,15 @@
 <script>
   export default {
     name: 'sidebar',
+    data() {
+      return {
+        cssDemoMenu: [
+          { label: '九宫格图片', path: '/img-position' },
+          { label: '按钮边框旋转', path: '/btn-animation1' },
+          { label: '文字倒影', path: '/text-style1' },
+        ],
+      }
+    },
     methods: {
       menuClick (path) {
         this.$router.push(path)
