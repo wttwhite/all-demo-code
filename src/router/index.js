@@ -11,7 +11,7 @@ const routes = [
     component: () => import('@/page/css-demo/img-position.vue'),
     meta: {
       title: 'img-position',
-      isMenu: true
+      isMenu: true,
     },
   },
   {
@@ -20,7 +20,7 @@ const routes = [
     component: () => import('@/page/css-demo/btn-animation1.vue'),
     meta: {
       title: 'btn-animation1',
-      isMenu: true
+      isMenu: true,
     },
   },
   {
@@ -29,7 +29,16 @@ const routes = [
     component: () => import('@/page/css-demo/text-style1.vue'),
     meta: {
       title: 'text-style1',
-      isMenu: true
+      isMenu: true,
+    },
+  },
+  {
+    path: '/draggable',
+    name: 'draggable',
+    component: () => import('@/page/css-demo/draggable.vue'),
+    meta: {
+      title: 'draggable',
+      isMenu: true,
     },
   },
   {
@@ -38,9 +47,9 @@ const routes = [
     component: () => import('@/page/js-demo/interview-demo.vue'),
     meta: {
       title: 'interview-demo',
-      isMenu: true
+      isMenu: true,
     },
-  }
+  },
 ]
 
 export default routes
