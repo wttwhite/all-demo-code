@@ -36,6 +36,7 @@ export default {
         { label: '按钮边框旋转', path: '/btn-animation1' },
         { label: '文字倒影', path: '/text-style1' },
         { label: 'h5拖拽', path: '/draggable' },
+        { label: 'loading', path: '/loading' },
       ],
     }
   },

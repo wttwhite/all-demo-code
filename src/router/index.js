@@ -42,6 +42,15 @@ const routes = [
     },
   },
   {
+    path: '/loading',
+    name: 'loading',
+    component: () => import('@/page/css-demo/loading.vue'),
+    meta: {
+      title: 'loading',
+      isMenu: true,
+    },
+  },
+  {
     path: '/interview-demo',
     name: 'interview-demo',
     component: () => import('@/page/js-demo/interview-demo.vue'),
