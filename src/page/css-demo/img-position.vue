@@ -1,24 +1,22 @@
 <template>
-    <div class="img-container">
-      <div>
-        background-size: 300px 300px;
-      </div>
-      <div class="mt">
-        background-position: 0 -200px;
-      </div>
-      <div class="mt">
-        /*1-3*/
-        .img-item:nth-child(-1n+3)
-      </div>
-      <div class="img-box mt" >
-        <div class="img-item" v-for="n in 9" :index="n"></div>
-      </div>
+  <div class="img-container">
+    <div>background-size: 300px 300px;</div>
+    <div class="mt">background-position: 0 -200px;</div>
+    <div class="mt">/*1-3*/ .img-item:nth-child(-1n+3)</div>
+    <div class="img-box mt">
+      <div class="img-item" v-for="n in 9" :index="n"></div>
     </div>
+  </div>
 </template>
 <script>
-  export default {
-    name: 'img-position'
-  }
+export default {
+  name: 'img-position',
+  data() {
+    return {
+      label: '九宫格图片',
+    }
+  },
+}
 </script>
 <style>
 .img-container {
@@ -49,47 +47,46 @@
   background-position: 0 -200px;
   top: 220px;
 }
-.img-box:hover .img-item{
+.img-box:hover .img-item {
   top: 200px;
   border: none;
 }
 
 /* 1-6*/
-.img-item:nth-child(-1n+6) {
+.img-item:nth-child(-1n + 6) {
   background-position-y: -100px;
   top: 110px;
 }
-.img-box:hover .img-item:nth-child(-1n+6){
+.img-box:hover .img-item:nth-child(-1n + 6) {
   top: 100px;
 }
 /*1-3*/
-.img-item:nth-child(-1n+3) {
+.img-item:nth-child(-1n + 3) {
   background-position-y: 0;
   top: 0;
 }
-.img-box:hover .img-item:nth-child(-1n+3){
+.img-box:hover .img-item:nth-child(-1n + 3) {
   top: 0;
 }
-.img-item:nth-child(3n+1) {
+.img-item:nth-child(3n + 1) {
   left: 0;
 }
-.img-item:nth-child(3n+2) {
+.img-item:nth-child(3n + 2) {
   background-position-x: -100px;
-  left: 110px
+  left: 110px;
 }
-.img-box:hover .img-item:nth-child(3n+2){
+.img-box:hover .img-item:nth-child(3n + 2) {
   left: 100px;
 }
-.img-item:nth-child(3n+3) {
+.img-item:nth-child(3n + 3) {
   background-position-x: -200px;
   left: 220px;
 }
-.img-box:hover .img-item:nth-child(3n+3){
+.img-box:hover .img-item:nth-child(3n + 3) {
   left: 200px;
 }
-.img-box:hover{
+.img-box:hover {
   height: 300px;
   width: 300px;
 }
-
 </style>

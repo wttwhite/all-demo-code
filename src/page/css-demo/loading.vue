@@ -12,6 +12,16 @@
     <div class="box progress-10"></div>
   </div>
 </template>
+<script>
+export default {
+  name: 'loading',
+  data() {
+    return {
+      label: 'loading',
+    }
+  },
+}
+</script>
 <style lang="css" scoped>
 .box {
   margin: 12px;

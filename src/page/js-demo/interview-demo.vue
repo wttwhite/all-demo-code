@@ -8,10 +8,11 @@
 </template>
 <script>
 export default {
-  name: 'interview',
+  name: 'interview-demo',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      label: '计算',
     }
   },
   mounted() {
@@ -25,7 +26,7 @@ export default {
         n: 1,
         valueOf() {
           return this.n++
-        }
+        },
       }
       console.log('1: ', a == 1 && a == 2 && a == 3)
     },
@@ -35,12 +36,12 @@ export default {
       // fn = fn+1 + arr[n]
       const sum = (arr) => {
         const fn = (n) => {
-          return n >= arr.length ? 0 : fn(n+1) + arr[n]
+          return n >= arr.length ? 0 : fn(n + 1) + arr[n]
         }
         return fn(0)
       }
       console.log('2: ', sum(arrs))
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,64 +1,49 @@
 // import app from '@/app.vue'
-
+import { getComponent } from '@/utils'
 const routes = [
   {
     path: '/',
     redirect: '/img-position',
   },
-  {
-    path: '/img-position',
-    name: 'img-position',
-    component: () => import('@/page/css-demo/img-position.vue'),
-    meta: {
-      title: 'img-position',
-      isMenu: true,
-    },
-  },
-  {
-    path: '/btn-animation1',
-    name: 'btn-animation1',
-    component: () => import('@/page/css-demo/btn-animation1.vue'),
-    meta: {
-      title: 'btn-animation1',
-      isMenu: true,
-    },
-  },
-  {
-    path: '/text-style1',
-    name: 'text-style1',
-    component: () => import('@/page/css-demo/text-style1.vue'),
-    meta: {
-      title: 'text-style1',
-      isMenu: true,
-    },
-  },
-  {
-    path: '/draggable',
-    name: 'draggable',
-    component: () => import('@/page/css-demo/draggable.vue'),
-    meta: {
-      title: 'draggable',
-      isMenu: true,
-    },
-  },
-  {
-    path: '/loading',
-    name: 'loading',
-    component: () => import('@/page/css-demo/loading.vue'),
-    meta: {
-      title: 'loading',
-      isMenu: true,
-    },
-  },
-  {
-    path: '/interview-demo',
-    name: 'interview-demo',
-    component: () => import('@/page/js-demo/interview-demo.vue'),
-    meta: {
-      title: 'interview-demo',
-      isMenu: true,
-    },
-  },
 ]
 
+const getRoute = (fileName, requireComponent) => {
+  return getComponent(requireComponent).map((item) => {
+    return {
+      path: '/' + item.name,
+      name: item.name,
+      component: () => import(`@/page/${fileName}/${item.name}.vue`),
+      meta: {
+        title: item.name,
+        isMenu: true,
+      },
+    }
+  })
+}
+routes.push(
+  ...getRoute(
+    'css-demo',
+    require.context(
+      // 其组件目录的相对路径
+      `../page/css-demo/`,
+      // 是否查询其子目录
+      true,
+      // 匹配基础组件文件名的正则表达式
+      /.vue$/
+    )
+  )
+)
+routes.push(
+  ...getRoute(
+    'js-demo',
+    require.context(
+      // 其组件目录的相对路径
+      `../page/js-demo/`,
+      // 是否查询其子目录
+      true,
+      // 匹配基础组件文件名的正则表达式
+      /.vue$/
+    )
+  )
+)
 export default routes

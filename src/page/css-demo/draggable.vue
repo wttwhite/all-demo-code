@@ -21,6 +21,7 @@ export default {
   name: 'draggable',
   data() {
     return {
+      label: 'h5拖拽',
       sourceNode: null, // 当前拖动的元素
     }
   },

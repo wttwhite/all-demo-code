@@ -3,7 +3,17 @@
     <div class="text">文字倒影</div>
   </div>
 </template>
-<style>
+<script>
+export default {
+  name: 'text-style1',
+  data() {
+    return {
+      label: '文字倒影',
+    }
+  },
+}
+</script>
+<style scoped>
 .text-style1 {
   height: 100%;
   width: 100%;
@@ -17,7 +27,7 @@
   color: blue;
   font-size: 58px;
 }
-.text::after{
+.text::after {
   content: '文字倒影';
   position: absolute;
   left: 0;

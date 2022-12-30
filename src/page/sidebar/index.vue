@@ -20,29 +20,68 @@
     <el-submenu index="2">
       <!--      <i class="el-icon-document"></i>-->
       <template slot="title">js奇奇怪怪功能集合</template>
-      <el-menu-item index="2-1" @click.native="menuClick('/interview-demo')"
-        >js-demo</el-menu-item
+      <el-menu-item
+        v-for="(item, index) in jsDemoMenu"
+        :key="index"
+        :index="`2-${index + 1}`"
+        @click.native="menuClick(item.path)"
+      >
+        {{ item.label }}</el-menu-item
+      >
       >
     </el-submenu>
   </el-menu>
 </template>
 <script>
+import { getComponent } from '@/utils'
 export default {
   name: 'sidebar',
   data() {
     return {
-      cssDemoMenu: [
-        { label: '九宫格图片', path: '/img-position' },
-        { label: '按钮边框旋转', path: '/btn-animation1' },
-        { label: '文字倒影', path: '/text-style1' },
-        { label: 'h5拖拽', path: '/draggable' },
-        { label: 'loading', path: '/loading' },
-      ],
+      cssDemoMenu: [],
+      jsDemoMenu: [],
     }
+  },
+  mounted() {
+    // require.context只能在这用，在js中不行，不知道为啥
+    this.getDomMenu(
+      'cssDemoMenu',
+      getComponent(
+        require.context(
+          // 其组件目录的相对路径
+          `../css-demo/`,
+          // 是否查询其子目录
+          true,
+          // 匹配基础组件文件名的正则表达式
+          /.vue$/
+        )
+      )
+    )
+    this.getDomMenu(
+      'jsDemoMenu',
+      getComponent(
+        require.context(
+          // 其组件目录的相对路径
+          `../js-demo/`,
+          // 是否查询其子目录
+          true,
+          // 匹配基础组件文件名的正则表达式
+          /.vue$/
+        )
+      )
+    )
   },
   methods: {
     menuClick(path) {
       this.$router.push(path)
+    },
+    getDomMenu(key, arr) {
+      this[key] = arr.map((item) => {
+        return {
+          path: '/' + item.name,
+          label: item.data().label,
+        }
+      })
     },
   },
 }

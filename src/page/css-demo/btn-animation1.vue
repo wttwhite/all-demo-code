@@ -1,15 +1,18 @@
 <template>
   <div class="btn-animation1">
-    <div class="btn-box">
-      按钮
-    </div>
-    <div class="btn-box circle-box" >
-      loading
-    </div>
+    <div class="btn-box">按钮</div>
+    <div class="btn-box circle-box">loading</div>
   </div>
 </template>
 <script>
-
+export default {
+  name: 'btn-animation1',
+  data() {
+    return {
+      label: '按钮边框旋转',
+    }
+  },
+}
 </script>
 <style scoped>
 .btn-animation1 {
@@ -34,7 +37,7 @@
   z-index: 1;
 }
 .btn-box::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -50,8 +53,8 @@
     transform: rotate(360deg);
   }
 }
-.btn-box::after{
-  content: "";
+.btn-box::after {
+  content: '';
   position: absolute;
   top: 2px;
   left: 2px;
@@ -66,7 +69,7 @@
   height: 100px;
   border-radius: 50px;
 }
-.circle-box::after{
+.circle-box::after {
   border-radius: 48px;
 }
 </style>
