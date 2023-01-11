@@ -3,7 +3,7 @@ import { getComponent } from '@/utils'
 const routes = [
   {
     path: '/',
-    redirect: '/img-position',
+    redirect: '/btn-animation',
   },
 ]
 
