@@ -15,7 +15,7 @@ export default {
 </script>
 <style lang="css" scoped>
 .wrapper {
-  height: 100vh;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;

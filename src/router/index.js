@@ -7,12 +7,13 @@ const routes = [
   },
 ]
 
-const getRoute = (fileName, requireComponent) => {
+const getRoute = (fileName, requireComponent, isIndex) => {
   return getComponent(requireComponent).map((item) => {
+    const path = isIndex ? `${item.name}/index.vue` : `${item.name}.vue`
     return {
       path: '/' + item.name,
       name: item.name,
-      component: () => import(`@/page/${fileName}/${item.name}.vue`),
+      component: () => import(`@/page/${fileName}/${path}`),
       meta: {
         title: item.name,
         isMenu: true,
@@ -29,8 +30,9 @@ routes.push(
       // 是否查询其子目录
       true,
       // 匹配基础组件文件名的正则表达式
-      /.vue$/
-    )
+      /index.vue$/
+    ),
+    true
   )
 )
 routes.push(
@@ -43,7 +45,8 @@ routes.push(
       true,
       // 匹配基础组件文件名的正则表达式
       /.vue$/
-    )
+    ),
+    false
   )
 )
 export default routes

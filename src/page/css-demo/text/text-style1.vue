@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 .text-style1 {
-  height: 100%;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center;

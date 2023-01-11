@@ -1,23 +1,19 @@
 <template>
-  <div class="btn-animation1">
+  <div class="btn-1">
     <div class="btn-box">按钮</div>
     <div class="btn-box circle-box">loading</div>
   </div>
 </template>
 <script>
 export default {
-  name: 'btn-animation1',
-  data() {
-    return {
-      label: '按钮边框旋转',
-    }
-  },
+  name: 'btn-1',
 }
 </script>
 <style scoped>
-.btn-animation1 {
-  height: 100%;
-  width: 100%;
+.btn-1 {
+  height: 100px;
+  width: 100px;
+  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

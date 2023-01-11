@@ -1,14 +1,11 @@
 <template>
-  <div class="box gradient-border">炫酷渐变边框</div>
+  <div>
+    <div class="box gradient-border">炫酷渐变边框</div>
+  </div>
 </template>
 <script>
 export default {
-  name: 'btn-border',
-  data() {
-    return {
-      label: '渐变边框',
-    }
-  },
+  name: 'btn-5',
 }
 </script>
 <style lang="css" scoped>
@@ -23,10 +20,10 @@ export default {
 
 .box {
   width: 350px;
-  height: 100px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 </style>

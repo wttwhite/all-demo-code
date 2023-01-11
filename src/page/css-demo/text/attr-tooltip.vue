@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 150px">
     <h1>HTML/CSS tooltip</h1>
     <p>
       Hover <span class="tooltip" data-tooltip="Tooltip Content">Here</span> to

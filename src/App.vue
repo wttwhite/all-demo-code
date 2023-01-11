@@ -1,6 +1,6 @@
 <template>
   <div class="app-layout">
-    <SidebarCom class="sidebar"/>
+    <SidebarCom class="sidebar" />
     <router-view />
   </div>
 </template>
@@ -12,7 +12,8 @@ export default {
 }
 </script>
 <style>
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -25,6 +26,6 @@ html, body {
 .sidebar {
   width: 240px;
   height: 100%;
+  flex-shrink: 0;
 }
 </style>
-

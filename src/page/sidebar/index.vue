@@ -1,8 +1,8 @@
 <template>
-  <el-scrollbar style="height: 100%">
+  <el-scrollbar>
     <el-menu
       default-active="1"
-      class="el-menu-vertical-demo"
+      class="el-menu-vertical"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
@@ -30,7 +30,6 @@
         >
           {{ item.label }}</el-menu-item
         >
-        >
       </el-submenu>
     </el-menu>
   </el-scrollbar>
@@ -56,7 +55,7 @@ export default {
           // 是否查询其子目录
           true,
           // 匹配基础组件文件名的正则表达式
-          /.vue$/
+          /index.vue$/
         )
       )
     )
@@ -80,6 +79,7 @@ export default {
     },
     getDomMenu(key, arr) {
       this[key] = arr.map((item) => {
+        console.log('itemitemitem', item)
         return {
           path: '/' + item.name,
           label: item.data().label,
@@ -89,3 +89,16 @@ export default {
   },
 }
 </script>
+<style scoped>
+.el-scrollbar {
+  height: 100%;
+}
+.el-menu-vertical {
+  height: calc(100vh - 17px);
+}
+</style>
+<style>
+.el-scrollbar__wrap {
+  height: calc(100% + 17px);
+}
+</style>
