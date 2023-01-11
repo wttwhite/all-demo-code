@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar>
     <el-menu
-      default-active="1"
+      default-active="1-1"
       class="el-menu-vertical"
       background-color="#545c64"
       text-color="#fff"
