@@ -79,7 +79,7 @@ export default {
     },
     getDomMenu(key, arr) {
       this[key] = arr.map((item) => {
-        console.log('itemitemitem', item)
+        // console.log('itemitemitem', item)
         return {
           path: '/' + item.name,
           label: item.data().label,

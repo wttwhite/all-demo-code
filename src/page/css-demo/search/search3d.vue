@@ -1,0 +1,121 @@
+<template>
+  <div class="box">
+    <div class="inputBox">
+      <div class="shadow"></div>
+      <input type="text" placeholder="输入你需要查找的内容" />
+      <!-- <ion-icon name="search-outline"></ion-icon> -->
+      <i class="el-icon-search"></i>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: 'search3d',
+}
+</script>
+<style lang="css" scoped>
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #cfd1e1;
+  box-sizing: border-box;
+  width: 600px;
+  height: 300px;
+}
+.inputBox {
+  position: relative;
+  width: 65px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.inputBox:hover {
+  width: 400px;
+}
+.inputBox::before {
+  content: '';
+  position: absolute;
+  /* top: 0; */
+  top: -8px;
+  left: 0;
+  width: 10px;
+  /* height: 100%; */
+  height: calc(100% + 18px);
+  z-index: 1;
+  background: linear-gradient(#fff, #fff, #e3e3e3);
+  filter: blur(1px);
+}
+.inputBox::after {
+  content: '';
+  position: absolute;
+  /* top: 1px; */
+  top: -8px;
+  right: -1px;
+  width: 10px;
+  /* height: 100%; */
+  height: calc(100% + 18px);
+  z-index: 1;
+  background: #9d9d9d;
+  filter: blur(1px);
+}
+.shadow {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: calc(100% + 50px);
+  height: 300px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1),
+    transparent,
+    transparent
+  );
+  transform-origin: top;
+  transform: skew(45deg);
+  overflow: hidden;
+  pointer-events: none;
+}
+.shadow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #cfd1e1;
+  z-index: 1;
+}
+.inputBox input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 10px 25px;
+  outline: none;
+  font-size: 1.1em;
+  color: #555;
+  background: linear-gradient(#dbdae1, #a3aaba);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), 15px 15px 15px rgba(0, 0, 0, 0.1),
+    20px 20px 15px rgba(0, 0, 0, 0.1), 30px 30px 15px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 2px #fff;
+}
+.inputBox input,
+.inputBox input::placeholder {
+  color: transparent;
+}
+.inputBox:hover input,
+.inputBox:hover input::placeholder {
+  color: #555;
+}
+.el-icon-search {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #555;
+}
+</style>

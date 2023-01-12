@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div style="display: flex">
     <imgPositionVue />
   </div>
 </template>
 <script>
 import imgPositionVue from './img-position.vue'
+
 export default {
   name: 'img-style',
   components: { imgPositionVue },
