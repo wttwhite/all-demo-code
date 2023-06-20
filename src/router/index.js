@@ -49,4 +49,18 @@ routes.push(
     false
   )
 )
+routes.push(
+  ...getRoute(
+    'map-demo',
+    require.context(
+      // 其组件目录的相对路径
+      `../page/map-demo/`,
+      // 是否查询其子目录
+      true,
+      // 匹配基础组件文件名的正则表达式
+      /.vue$/
+    ),
+    false
+  )
+)
 export default routes

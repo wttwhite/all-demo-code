@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar>
     <el-menu
-      default-active="1-1"
+      default-active="3-1"
       class="el-menu-vertical"
       background-color="#545c64"
       text-color="#fff"
@@ -31,6 +31,18 @@
           {{ item.label }}</el-menu-item
         >
       </el-submenu>
+      <el-submenu index="3">
+        <!--      <i class="el-icon-document"></i>-->
+        <template slot="title">map</template>
+        <el-menu-item
+          v-for="(item, index) in mapDemoMenu"
+          :key="index"
+          :index="`3-${index + 1}`"
+          @click.native="menuClick(item.path)"
+        >
+          {{ item.label }}</el-menu-item
+        >
+      </el-submenu>
     </el-menu>
   </el-scrollbar>
 </template>
@@ -42,6 +54,7 @@ export default {
     return {
       cssDemoMenu: [],
       jsDemoMenu: [],
+      mapDemoMenu: [],
     }
   },
   mounted() {
@@ -65,6 +78,19 @@ export default {
         require.context(
           // 其组件目录的相对路径
           `../js-demo/`,
+          // 是否查询其子目录
+          true,
+          // 匹配基础组件文件名的正则表达式
+          /.vue$/
+        )
+      )
+    )
+    this.getDomMenu(
+      'mapDemoMenu',
+      getComponent(
+        require.context(
+          // 其组件目录的相对路径
+          `../map-demo/`,
           // 是否查询其子目录
           true,
           // 匹配基础组件文件名的正则表达式
