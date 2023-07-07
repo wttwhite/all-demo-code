@@ -5,6 +5,7 @@ import routes from './router'
 import elementUi from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/style/common.css'
+import '@/components'
 
 Vue.use(VueRouter)
 Vue.use(elementUi)
