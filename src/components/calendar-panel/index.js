@@ -92,7 +92,7 @@ export class CalendarPanel {
           })
           preMonthBeginDay++
         } else if (count > days) {
-          // 这个月
+          // 下一个月
           this.daysList[line].push({
             disabled: true,
             day: count - days,
@@ -100,7 +100,7 @@ export class CalendarPanel {
           })
           count++
         } else {
-          // 下一个月
+          // 这个月
           //   const isCurrent = this.judgeIsToday(count)
           this.daysList[line].push({
             disabled: false,
