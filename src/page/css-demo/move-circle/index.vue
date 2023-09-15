@@ -1,12 +1,5 @@
 <template>
-  <div
-    style="
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      background: #d7c881;
-    "
-  >
+  <div style="display: flex; width: 100%; background: #d7c881; flex-wrap: wrap">
     <move1Vue />
     <move2Vue
       :everyHeight="34"
@@ -35,18 +28,21 @@
       </template>
     </move2Vue>
     <move3Vue />
+    <move4Vue />
   </div>
 </template>
 <script>
 import move1Vue from './move-1.vue'
 import move2Vue from './move-2.vue'
 import move3Vue from './move-3/move-3.vue'
+import move4Vue from './move-4/index.vue'
 export default {
   name: 'move-circle',
   components: {
     move1Vue,
     move2Vue,
     move3Vue,
+    move4Vue,
   },
   data() {
     return {

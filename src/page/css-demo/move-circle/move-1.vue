@@ -71,12 +71,6 @@ export default {
       type: Number,
       default: 58,
     },
-    topArr: {
-      type: Array,
-      default: () => {
-        return [0, 20, 40, 20, 0, 0, 0]
-      },
-    },
     fontSize: {
       type: Number,
       default: 15,
@@ -101,21 +95,15 @@ export default {
       },
       immediate: true,
     },
-    topArr: {
-      handler(n) {
-        this.liTop = [...n]
-      },
-      immediate: true,
-    },
   },
   data() {
     return {
       boxTimer: null,
       liTimer: null,
       listData: [],
-      liTop: [], // [0, 50, 100, 50, 0,  0, 0,0,0,0]
-      liOpacity: [0.2, 0.5, 1, 0.5, 0.2, 0, 0],
-      liScale: [0.7, 1, 1.2, 1, 0.7, 0, 0],
+      liTop: [0, 20, 40, 20, 0],
+      liOpacity: [0.2, 0.5, 1, 0.5, 0.2],
+      liScale: [0.7, 1, 1.2, 1, 0.7],
       liLeft: [],
       // liLeft: [0, divWidth, divWidth*2, divWidth*3, divWidth*4,
       //   divWidth*5, divWidth*-1, divWidth*-2,divWidth*-3,divWidth*-4],
