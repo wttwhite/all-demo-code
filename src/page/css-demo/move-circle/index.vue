@@ -35,7 +35,7 @@
 import move1Vue from './move-1.vue'
 import move2Vue from './move-2.vue'
 import move3Vue from './move-3/move-3.vue'
-import move4Vue from './move-4/index.vue'
+import move4Vue from './move-4/move4.vue'
 export default {
   name: 'move-circle',
   components: {
